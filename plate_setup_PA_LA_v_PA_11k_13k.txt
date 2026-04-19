@@ -1,0 +1,45 @@
+test_1: Effect of PA in 11k and 13k bacterial growth
+n_cycles: 72
+n_dilutions: 6
+n_strains: 2
+n_replicates: 3
+antibiotic: PA
+concentrations: 1000,500,250,125,62.5,31.25
+strain: 11k
+color: winter
+replicate_1: A1,A2,A3,A4,A5,A6
+replicate_2: B1,B2,B3,B4,B5,B6
+replicate_3: C1,C2,C3,C4,C5,C6
+control+: A11,B11,C11
+strain: 13k
+color: plasma
+replicate_1: E1,E2,E3,E4,E5,E6
+replicate_2: F1,F2,F3,F4,F5,F6
+replicate_3: G1,G2,G3,G4,G5,G6
+control+: E11,F11,G11
+~~~~~~~~~~~~~~~~~~~~~~~~
+test_2: Effect of LA in 11k and 13k bacterial growth with 125 microgram per ml of PA
+n_cycles: 72
+n_dilutions: 4
+n_strains: 2
+n_replicates: 3
+antibiotic: LA
+concentrations: 97.5,48.75,24.38,12.20
+strain: 11k
+color: winter
+replicate_1: A7,A8,A9,A10
+replicate_2: B7,B8,B9,B10
+replicate_3: C7,C8,C9,C10
+control+: A11,B11,C11
+strain: 13k
+color: plasma
+replicate_1: E7,E8,E9,E10
+replicate_2: F7,F8,F9,F10
+replicate_3: G7,G8,G9,G10
+control+: E11,F11,G11
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+control-: 3
+TSB: A12,B12,C12
+LA negative control for 11k: D1,D2,D3
+LA negative control for 13k: H1,H2,H3
