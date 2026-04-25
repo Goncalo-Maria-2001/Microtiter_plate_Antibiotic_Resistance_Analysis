@@ -13,9 +13,11 @@ Download plate_analysis.py (main file) and fill in your experiment data with the
 
 Defines a recursive default dict object for other functions to use
 
-### plate_analysis.get_plate_setup(path)
+### plate_analysis.get_plate_setup(path_to_plate_setup)
 
-Generates a dictionary with the following structure so that the information from the experiment is organized in the following way:
+Generates a nested dictionary (plate) which stores the information from the experiment in a structured way as displayed below:
 
-<img width="1920" height="1080" alt="Strain 1 (6) (1)" src="https://github.com/user-attachments/assets/88a1dc3f-395c-4f09-8228-4a992ae55993" />
+<img width="1920" height="1080" alt="Dictionary" src="https://github.com/user-attachments/assets/fa7210df-db5c-4026-b2d1-fce8b4ab9ab2" />
 
+
+Where the tests, other controls, strains and replicates dictionaries can contain multiple dictionaries with the structure of test 1, control 1, strain 1 and replicate 1 respectively depending on the path_to_plate_setup provided. Additionally 
