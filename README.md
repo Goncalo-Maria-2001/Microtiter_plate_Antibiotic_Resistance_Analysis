@@ -17,7 +17,7 @@ Defines a recursive default dict object for other functions to use.
 
 Input: path to a plate_setup.txt file with information detailing how the assay was done.
 
-Output: generates a nested dictionary (plate without data) which stores the information from the experiment in a structured way as displayed below:
+Output: generates a nested dictionary ("plate without data") which stores the information from the experiment in a structured way as displayed below:
 
 <img width="1920" height="1080" alt="Dictionary (1)" src="https://github.com/user-attachments/assets/a796445f-c6eb-4c6d-8c1c-39cb791b7fa0" />
 
@@ -25,9 +25,9 @@ Where the tests, other controls, strains and replicates dictionaries can contain
 
 ### plate_analysis.add_plate_data(plate_setup,path)
 
-Input: A plate_analysis output dictionary and the path to the output of Tecan i-control converted to .csv
+Input: A "plate without data" dictionary and the path to the output of Tecan i-control plate reading converted to .csv
 
-Output: A nested dictionary (plate with data) with the following structure
+Output: A nested dictionary ("plate with data") with the following structure
 
 <img width="1920" height="1080" alt="Dictionary" src="https://github.com/user-attachments/assets/0e15d5a7-5113-4f6e-b550-2ad0be9729a7" />
 
@@ -35,11 +35,14 @@ Where the tests, other controls, strains and replicates dictionaries can contain
 
 ### plate_analysis.create_save_dirs(plate,save_path):
 
-Input: A plate without data or plate with data dictionary, path to place results folder
+Input: A "plate without data" or "plate with data" dictionary, path to place results folder
 
-Output: Creates the directories where the output plots and workbooks will be stored and stores their paths in a dictionary with the following structure.
+Output: Dictionary of paths ("save directories") where the plots and excel workbooks will be saved with the structure presented below.
 
-<img width="1920" height="1080" alt="Dictionary (1)" src="https://github.com/user-attachments/assets/73935444-da8d-43b7-85d7-10395cd6ed2b" />
+Creates the directories where the output plots and workbooks will be stored
+
+<img width="1920" height="1080" alt="Dictionary (2)" src="https://github.com/user-attachments/assets/54bffaa3-43f4-4f98-93f7-e0623f9cdf36" />
+
 
 ### plate_analysis.has_fittable_growth(df,min_OD_change):
 
@@ -52,6 +55,22 @@ Does a series of tests on the well data to determine if growth is considered to 
 ### plate_analysis.lag_phase_finder(df, slope_threshold):
 
 Input: A pandas DataFrame with two columns: 'Time' and 'OD' representing the evolution of OD over time for a given well and
- a float represnting the population growth from one cycle to the next at which the log phase begins
+ a float represnting the population growth rate at which the log phase begins
 
 Output: A float representing the cycle at which the lagphase ended
+
+### plate_analysis.get_control_avg(plate, test, strain):
+
+Input: A "plate with data" dictionary, a string corresponding to the name of a test, a string corresponding to the name of a strain
+
+Output: A pandas dataframe with the columns: 'Time' with entries cycle numbers and 'OD' with entries the average OD of the control+ wells at the corresponding cycle
+
+### plate_analysis.get_params_well(df, min_bic, min_OD_change, slope_threshold):
+
+Input: A pandas DataFrame with two columns: 'Time' and 'OD' representing the evolution of OD over time for a given well, a float representing the maximum BIC for which a model is considered to have fit (min_bic), a float representing the minimum OD for which growth is considered to have occured (min_OD_change), a float representing the population growth rate at which the log phase begins
+
+Output: A dictionary containing the values of each of the growth parameters studied (Lag phase duartion, maximum per capita growth rate, maximum OD) and the model name and BIC value
+
+### plate_analysis.get_params_plate(plate, min_bic, min_OD_change, slope_threshold):
+
+Input: A "plate with data" dictionary and min_bic, min_OD_change and slope-threshold as defined in plate_analysis.get_params_well 
