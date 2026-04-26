@@ -1,6 +1,6 @@
 # Microtiter_plate_Antibiotic_Resistance_Analysis
 
-Files used to obtain growth curve plots and growth parameter data in broth dilution assays done on 96-well plate, subjecting various strains to serial dillutions of various different antibiotics
+Files used to obtain growth curve plots and growth parameter data in antibiotic resistance broth dilution assays done on 96-well plate, subjecting various strains to serial dillutions of various different antibiotics
 
 ## Getting started
 
@@ -11,12 +11,24 @@ Download plate_analysis.py (main file) and fill in your experiment data with the
 
 ### plate_analysis.recursive_dict()
 
-Defines a recursive default dict object for other functions to use
+Defines a recursive default dict object for other functions to use.
 
 ### plate_analysis.get_plate_setup(path_to_plate_setup)
 
-Generates a nested dictionary (plate) which stores the information from the experiment in a structured way as displayed below:
+Input: path to a plate_setup.txt file with information detailing how the assay was done.
+
+Output: generates a nested dictionary (plate) which stores the information from the experiment in a structured way as displayed below:
 
 <img width="1920" height="1080" alt="Dictionary (1)" src="https://github.com/user-attachments/assets/a796445f-c6eb-4c6d-8c1c-39cb791b7fa0" />
 
-Where the tests, other controls, strains and replicates dictionaries can contain multiple dictionaries with the structure of test 1, control 1, strain 1 and replicate 1 respectively depending on the path_to_plate_setup provided. Additionally 
+Where the tests, other controls, strains and replicates dictionaries can contain multiple dictionaries with the structure of test 1, control 1, strain 1 and replicate 1 respectively depending on the path_to_plate_setup provided.
+
+### plate_analysis.add_plate_data(plate_setup,path)
+
+Input: A plate_analysis output dictionary and the path to the output of Tecan i-control converted to .csv
+
+Output: A nested dictionary with the following structure
+
+<img width="1920" height="1080" alt="Dictionary" src="https://github.com/user-attachments/assets/0e15d5a7-5113-4f6e-b550-2ad0be9729a7" />
+
+
