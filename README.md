@@ -37,7 +37,7 @@ Where the tests, other controls, strains and replicates dictionaries can contain
 
 Input: A "plate without data" or "plate with data" dictionary, path to place results folder
 
-Output: Dictionary of paths ("save directories") where the plots and excel workbooks will be saved with the structure presented below.
+Output: nested dictionary of paths ("save directories") where the plots and excel workbooks will be saved with the structure presented below.
 
 Creates the directories where the output plots and workbooks will be stored
 
@@ -73,4 +73,10 @@ Output: A dictionary containing the values of each of the growth parameters stud
 
 ### plate_analysis.get_params_plate(plate, min_bic, min_OD_change, slope_threshold):
 
-Input: A "plate with data" dictionary and min_bic, min_OD_change and slope-threshold as defined in plate_analysis.get_params_well 
+Input: A "plate with data" dictionary and min_bic, min_OD_change and slope-threshold as defined in plate_analysis.get_params_well
+
+Output: A nested dictionary ("Params") containing the growth parameters for all testing wells organized as follows
+
+<img width="1920" height="1080" alt="Strain 1 (8)" src="https://github.com/user-attachments/assets/2d37ac0a-ac6e-426b-96d4-3114dab6c15f" />
+
+Where 
