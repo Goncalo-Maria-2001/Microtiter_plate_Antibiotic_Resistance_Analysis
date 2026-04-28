@@ -1,4 +1,4 @@
-# Microtiter_plate_Antibiotic_Resistance_Analysis
+# Microtiter_plate_Antibiotic_Resistance_Analysis (Incomplete)
 
 Files used to obtain growth curve plots and growth parameter data in antibiotic resistance broth dilution assays done on 96-well plate, subjecting various strains to serial dillutions of various different antibiotics
 
