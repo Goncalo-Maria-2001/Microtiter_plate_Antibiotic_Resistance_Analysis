@@ -4,7 +4,7 @@ n_dilutions: 6
 n_strains: 2
 n_replicates: 3
 antibiotic: Antibiotic_1
-concentrations: 1000,500,250,125,62.5,31.25
+concentrations: 4000,2000,1000,500,250,125
 strain: strain_1
 color: winter
 replicate_1: A1,A2,A3,A4,A5,A6
@@ -24,8 +24,8 @@ n_dilutions: 4
 n_strains: 2
 n_replicates: 3
 antibiotic: Antibiotic_2
-concentrations: 97.5,48.75,24.38,12.20
-strain: strain_!
+concentrations: 200,100,50,25
+strain: strain_1
 color: winter
 replicate_1: A7,A8,A9,A10
 replicate_2: B7,B8,B9,B10
