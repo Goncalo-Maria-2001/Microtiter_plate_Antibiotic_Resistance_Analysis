@@ -77,6 +77,7 @@ Input: A "plate with data" dictionary and min_bic, min_OD_change and slope-thres
 
 Output: A nested dictionary ("Params") containing the growth parameters for all testing wells organized as follows
 
-<img width="1920" height="1080" alt="Strain 1 (8)" src="https://github.com/user-attachments/assets/2d37ac0a-ac6e-426b-96d4-3114dab6c15f" />
+<img width="1920" height="1080" alt="Strain 1" src="https://github.com/user-attachments/assets/47087084-ec24-480b-b98b-23ea1c79eb94" />
+
 
 Where 
